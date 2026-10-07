@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.StudentDTO;
 import com.example.demo.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,9 +20,9 @@ public class StudentController {
 
 
     @PostMapping
-    public ResponseEntity<String> createStudent() {
+    public ResponseEntity<StudentDTO> createStudent(@RequestBody StudentDTO studentDTO) {
         // Logic to create a student would go here
         studentService.createStudent();
-        return ResponseEntity.ok("Student created successfully");
+        return ResponseEntity.ok(studentDTO);
     }
 }
