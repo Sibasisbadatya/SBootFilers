@@ -25,8 +25,8 @@ public class RequestFilter implements Filter {
 //        because in body there can be audio json or video
 //and the stream can only be read once and since here it is read so,when this request will go then dispatcher servlet then
 //        during reading from dispatcher servlet it will give EXCEPTION. because during reading the pointer already moved to end of line
-//        so it cant be read again to convert to DTO by jakson library. and sice the strea can be any size so
-//        tomcat will not store the data and hence an cant be read again from start.
+//        so it cant be read again to convert to DTO by jakson library. and sice the stream can be any size so
+//        tomcat will not store the data and hence it cant be read again from start.
 
 
         StringBuilder body = new StringBuilder();
